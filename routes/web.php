@@ -13,9 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+require __DIR__.'/auth.php';
+
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get("/recipes", function() {
+    return view('recipes');
+})->middleware(['auth'])->name('recipes');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,9 +35,3 @@ Route::get('/dashboard', function () {
 Route::get('/ingredients', function () {
     return view('ingredients');
 })->middleware(['auth'])->name('ingredients');
-
-Route::get("/recipes", function() {
-    return view('recipes');
-})->middleware(['auth'])->name('recipes');
-
-require __DIR__.'/auth.php';

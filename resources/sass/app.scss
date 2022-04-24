@@ -1,0 +1,23 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// Variables
+@import 'variables';
+
+html,body{
+    font-family: 'Roboto', sans-serif;
+}
+
+main{
+    padding-left:24px;
+    padding-top: 90px;
+    transition: padding 0.3s;
+}
+
+#fs-loader{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 5;
+
+}

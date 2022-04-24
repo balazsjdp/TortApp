@@ -20,12 +20,20 @@ class NavItemSeeder extends Seeder
                 'name' => 'Főoldal',
                 'route' => 'dashboard',
                 'ordering' => 1,
+                'icon' => 'DashboardIcon'
             ],
             [
                 'name' => 'Összetevők',
                 'route' => 'ingredients',
                 'ordering' => 2,
-            ]
+                'icon' => 'EggIcon'
+            ],
+            [
+                'name' => 'Receptek',
+                'route' => 'recipes',
+                'ordering' => 2,
+                'icon' => 'ReceiptIcon'
+            ],
         ];
 
         foreach ($links as $key => $navbar) {

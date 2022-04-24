@@ -12,6 +12,6 @@ class NavItem extends Model
     protected $table = 'navitems';
 
     protected $fillable = [
-        'name', 'route', 'ordering'
+        'name', 'route', 'ordering', 'icon'
     ];
 }
