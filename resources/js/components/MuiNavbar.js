@@ -129,6 +129,7 @@ const MuiNavbar = (props) => {
             >
               <MenuIcon />
             </IconButton>
+            <img style={{height: "40px", marginRight: '15px'}} src={`${Laravel.imagesUrl}/cake_logo.png`}></img>
             <Typography variant="h6" noWrap component="div"  sx={{ flexGrow: 1 }}>
               {currentPageName}
             </Typography>

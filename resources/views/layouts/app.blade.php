@@ -33,7 +33,8 @@
        'csrfToken' => csrf_token(),
        'apiToken' => Auth::user() ->api_token ?? null,
        'theme' => 'light',
-       'apiUrl' => url('/')
+       'apiUrl' => url('/'),
+       'imagesUrl' => url('/images')
    ]) !!};
 </script>
 
