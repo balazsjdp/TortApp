@@ -135,7 +135,7 @@ const MuiNavbar = (props) => {
             <Typography sx={{margin: theme.spacing(0, 2)}} variant="p" noWrap component="div">
               {props.username}
             </Typography>
-            <Button variant="outlined" color="error" >Kijelentkezés</Button>
+            <Button onClick={onLogoutClick} variant="outlined" color="error" >Kijelentkezés</Button>
           </Toolbar>
         </AppBar>
         <Drawer
@@ -176,11 +176,6 @@ const MuiNavbar = (props) => {
             }
           </List>
           <Divider />
-          <List>
-            <ListItem onClick={onLogoutClick} component="button" button key={"Kijelentkezés"}>
-                <ListItemText primary={"Kijelentkezés"} />
-              </ListItem>
-          </List>
         </Drawer>
       </Box>
       </ThemeProvider>

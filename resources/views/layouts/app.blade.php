@@ -22,16 +22,17 @@
 <body>
     <div id="app">
         @include('layouts.navigation')
-        
         <main class="py-4">
             @yield('content')
         </main>
     </div> 
 
+    
 <script>
-
-
-
+   window.Laravel = {!! json_encode([
+       'csrfToken' => csrf_token(),
+       'apiToken' => Auth::user() ->api_token ?? null,
+   ]) !!};
 </script>
 
 </body>

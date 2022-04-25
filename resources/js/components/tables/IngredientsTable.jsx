@@ -1,6 +1,10 @@
 import { DataGrid } from '@mui/x-data-grid';
 import ReactDOM from 'react-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import axios from 'axios';
+import { useEffect } from 'react';
+
+
 
 const darkTheme = createTheme({
     palette: {
@@ -55,14 +59,29 @@ const columns = [
 
 
 const IngredientsTable = () => {
+
+    useEffect(() => {
+      console.log('useff')
+      getIngredients()
+    },[])
+
+    const getIngredients = () => {
+      axios.get("http://localhost:8000/api/ingredient/all")
+      .then((res) => {
+        console.log(res)
+      })
+    }
+
+
+
     return ( 
         <ThemeProvider theme={darkTheme}>
-        <div style={{ height: 400, width: '100%' }}>
+        <div style={{ height: 700, width: '100%' }}>
         <DataGrid
           rows={rows}
           columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
+          pageSize={10}
+          rowsPerPageOptions={[10]}
           checkboxSelection
           disableSelectionOnClick
         />
