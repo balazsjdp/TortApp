@@ -53,9 +53,9 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-const darkTheme = createTheme({
+const appTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: Laravel.theme,
   },
 });
 
@@ -115,7 +115,7 @@ const MuiNavbar = (props) => {
     }
   
     return (
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={appTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="fixed" open={open}>

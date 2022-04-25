@@ -8,14 +8,14 @@ use App\Models\Ingredient;
 class IngredientController extends Controller
 {
 
-    /*public function __construct()
+    public function __construct()
     {
         $this->middleware('auth:api');
-    }*/
+    }
 
 
     public function all()
     {
-        return Ingredient::all();
+        return Ingredient::with('unit')->get();
     }
 }

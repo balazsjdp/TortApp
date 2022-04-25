@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\UnitController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,5 +22,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/*
+| ----------------
+| Ingredient routes 
+| -----------------
+*/
+Route::get('/ingredient/all',[IngredientController::class, 'all']);
 
-Route::middleware('auth:api')->get('/ingredient/all',[IngredientController::class, 'all']);
+/*
+| ----------------
+| Unit routes 
+| -----------------
+*/
+
+Route::get('/unit/all',[UnitController::class, 'all']);

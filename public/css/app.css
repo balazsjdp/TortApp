@@ -5,6 +5,7 @@ html, body {
 
 main {
   padding-left: 24px;
+  padding-right: 24px;
   padding-top: 90px;
   transition: padding 0.3s;
 }
