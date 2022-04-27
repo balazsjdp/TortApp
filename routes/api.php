@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IngredientController;
-use App\Http\Controllers\UnitController;
+use App\Http\Controllers\RecipeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,8 +31,8 @@ Route::get('/ingredient/all',[IngredientController::class, 'all']);
 
 /*
 | ----------------
-| Unit routes 
+| Recipe routes 
 | -----------------
 */
 
-Route::get('/unit/all',[UnitController::class, 'all']);
+Route::get('/recipe/all',[RecipeController::class, 'all']);

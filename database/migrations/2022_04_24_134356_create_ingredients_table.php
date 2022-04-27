@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->decimal("price", 8, 2);
-            $table->unsignedBigInteger("unit_id");
-            $table->foreign("unit_id")->references("id")->on("units");
+            $table->string("unit");
             $table->timestamps();
         });
     }

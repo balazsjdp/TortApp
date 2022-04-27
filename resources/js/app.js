@@ -16,3 +16,4 @@ require('./components/Example');
 require('./components/MuiNavbar');
 require('./components/Loader');
 require('./components/tables/IngredientsTable');
+require('./components/pages/Recipes/Recipes');

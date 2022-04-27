@@ -20,19 +20,19 @@ class NavItemSeeder extends Seeder
                 'name' => 'Főoldal',
                 'route' => 'dashboard',
                 'ordering' => 1,
-                'icon' => 'DashboardIcon'
+                'icon' => 'Dashboard'
             ],
             [
                 'name' => 'Összetevők',
                 'route' => 'ingredients',
                 'ordering' => 2,
-                'icon' => 'EggIcon'
+                'icon' => 'Egg'
             ],
             [
                 'name' => 'Receptek',
                 'route' => 'recipes',
                 'ordering' => 2,
-                'icon' => 'ReceiptIcon'
+                'icon' => 'Receipt'
             ],
         ];
 

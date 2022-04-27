@@ -16,6 +16,6 @@ class IngredientController extends Controller
 
     public function all()
     {
-        return Ingredient::with('unit')->get();
+        return Ingredient::all();
     }
 }

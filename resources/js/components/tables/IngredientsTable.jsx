@@ -27,11 +27,9 @@ const appTheme = createTheme({
 
 const IngredientsTable = () => {
     const [ingredients, setIngredients] = useState([]);
-    const [units, setUnits] = useState([]);
 
     useEffect(() => {
       getIngredients()
-      getUnits()
     },[])
 
     // Fetch ingredients
@@ -46,14 +44,8 @@ const IngredientsTable = () => {
       })
     }
 
-    // Fetch units
-    const getUnits = () => {
-      axios.get(Laravel.apiUrl + "/api/unit/all")
-      .then((res) => {
-        if(res.status === 200){
-          setUnits(res.data)
-        }
-      })
+    const cellEdit = (params) => {
+      console.log(params)
     }
 
     // Columns for ingredients table
@@ -67,9 +59,12 @@ const IngredientsTable = () => {
       {
         field: 'price',
         headerName: 'Egységár',
-        type: 'number',
+        type: 'decimal',
+        editable: true,
+        onCellEditCommit: {cellEdit},
         flex: 1,
-        valueGetter: (params) => {
+        editable: true,
+        renderCell: (params) => {
           return `${params.row.price} Ft`
         }
       },
@@ -77,9 +72,6 @@ const IngredientsTable = () => {
         field: 'unit',
         headerName: 'Egység',
         flex: 1,
-        valueGetter: (params) => {
-          return params.row.unit.name
-        }
       },
       {
         field: 'edit',
@@ -90,9 +82,6 @@ const IngredientsTable = () => {
         renderCell: (params) => {
           return (
             <Stack direction="row" spacing={1}>
-               <Button size="small" variant="contained" startIcon={<EditIcon />}>
-                Szerkesztés
-              </Button>
               <Button size="small" variant="outlined"  color="error" startIcon={<DeleteIcon />}>
                 Törlés
               </Button>
@@ -103,37 +92,13 @@ const IngredientsTable = () => {
       },
 
     ];
-    // Columns for units table
-    const columnsUnits = [
-      { field: 'id', headerName: 'ID', width: 50 },
-      {
-        field: 'name',
-        headerName: 'Megnevezés',
-        flex: 1,
-        editable: true
-      },
-      {
-        field: 'edit',
-        headerName: 'Lehetőségek',
-        flex: 1,
-        headerAlign: 'right',
-        align: 'right',
-        renderCell: (params) => {
-          return (
-            <Button size="small" variant="outlined"  color="error" startIcon={<DeleteIcon />}>
-            Törlés
-          </Button>
-          )
-        }
-      }
-    ]
-    
-    if(ingredients && units){
+   
+    if(ingredients){
       return (
         <ThemeProvider theme={appTheme}>
           <Box sx={{ width: 1 }}>
             <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
-              <Box gridColumn="span 8">
+              <Box gridColumn="span 12">
                 <Card >
                   <CardContent>
                     <Typography variant="h5" component="div" color="text.secondary" gutterBottom>
@@ -144,30 +109,6 @@ const IngredientsTable = () => {
                       <DataGrid
                         rows={ingredients}
                         columns={columnsIngredients}
-                        autoHeight
-                        pageSize={10}
-                        rowsPerPageOptions={[10]}
-                        checkboxSelection
-                        disableSelectionOnClick
-                      />
-                    </div>
-                    <IconButton color="primary" size="large" >
-                      <AddIcon />
-                    </IconButton>
-                  </CardContent>
-                </Card>
-              </Box>
-              <Box gridColumn="span 4">
-              <Card >
-                  <CardContent>
-                    <Typography variant="h5" component="div" color="text.secondary" gutterBottom>
-                      Egységek
-                    </Typography>
-   
-                    <div style={{ height: 700, width: '100%' }}>
-                      <DataGrid
-                        rows={units}
-                        columns={columnsUnits}
                         autoHeight
                         pageSize={10}
                         rowsPerPageOptions={[10]}

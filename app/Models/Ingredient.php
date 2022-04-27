@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Recipe;
+
 
 class Ingredient extends Model
 {
@@ -11,7 +13,7 @@ class Ingredient extends Model
     protected $table = 'ingredients';
 
 
-    public function unit() {
-        return $this->belongsTo('App\Models\Unit');
+    public function ingredients(){
+        return $this->belongsToMany(Recipe::class, 'recipe_ingredients');
     }
 }
