@@ -26,6 +26,7 @@ class IngredientController extends Controller
         $ingredient->name = $newData->name;
         $ingredient->price = $newData->price;
         $ingredient->unit = $newData->unit;
+        $ingredient->type = $newData->type;
 
         $ingredient->save();
     }
@@ -42,7 +43,8 @@ class IngredientController extends Controller
         $ingredient = Ingredient::create([
             'name' => 'Új összetevő',
             'price' => '0',
-            'unit' => 'g'
+            'unit' => 'g',
+            'type' => 'Általános'
         ]);
 
         //$ingredient->save();

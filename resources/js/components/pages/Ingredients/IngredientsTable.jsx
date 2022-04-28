@@ -104,6 +104,12 @@ const IngredientsTable = () => {
         flex: 1
       },
       {
+        field: 'type',
+        headerName: 'Típus / Márka',
+        editable: true,
+        flex: 1,
+      },
+      {
         field: 'price',
         headerName: 'Egységár',
         type: 'decimal',

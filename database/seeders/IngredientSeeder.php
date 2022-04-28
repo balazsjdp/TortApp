@@ -20,16 +20,19 @@ class IngredientSeeder extends Seeder
                 'name' => 'Liszt',
                 'price' => 15,
                 'unit' => 'g',
+                'type' => 'Nagyi titka'
             ],
             [
                 'name' => 'Tojás',
                 'price' => 50,
                 'unit' => 'db',
+                'type' => 'Házi'
             ],
             [
                 'name' => 'Sütőpor',
                 'price' => 150,
                 'unit' => 'csomag',
+                'type' => 'Auchanos'
             ],
         ];
 

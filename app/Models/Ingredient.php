@@ -15,7 +15,8 @@ class Ingredient extends Model
     protected $fillable = [
         'name',
         'price',
-        'unit'
+        'unit',
+        'type'
     ];
 
 
