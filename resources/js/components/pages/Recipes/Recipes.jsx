@@ -147,18 +147,14 @@ const Recipes = () => {
               ref={searchBar}
               id="recipe-search-bar"
             />
-        </Search>
+          </Search>
         </Grid>
-        <Grid item xs={0} md={3}>
-        </Grid>
+        <Grid item xs={0} md={3}></Grid>
         <Grid item md={3} xs={5}>
           <FilterGroup variant="outlined" filters={filterOptions} callBack={onFilter} style={{float: 'right'}} />
         </Grid>
       </Grid>
 
-
-     
-      
       <Grid container spacing={2}>
         {recipes.map(r => {
           return (
@@ -168,7 +164,7 @@ const Recipes = () => {
           )
         })}
       </Grid>
-    <Fab style={{position: 'fixed', bottom: '1rem', right: '1rem'}} color="primary" aria-label="add">
+      <Fab style={{position: 'fixed', bottom: '1rem', right: '1rem'}} color="primary" aria-label="add">
         <AddIcon />
       </Fab>
     </>

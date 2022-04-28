@@ -12,6 +12,12 @@ class Ingredient extends Model
     use HasFactory;
     protected $table = 'ingredients';
 
+    protected $fillable = [
+        'name',
+        'price',
+        'unit'
+    ];
+
 
     public function ingredients(){
         return $this->belongsToMany(Recipe::class, 'recipe_ingredients');

@@ -20,7 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger("ingredient_id");
             $table->foreign("ingredient_id")->references("id")->on("ingredients");
             $table->double('amount', 8, 2);
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

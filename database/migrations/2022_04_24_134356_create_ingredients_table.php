@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string("name");
             $table->decimal("price", 8, 2);
             $table->string("unit");
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

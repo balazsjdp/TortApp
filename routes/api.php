@@ -28,7 +28,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 | -----------------
 */
 Route::get('/ingredient/all',[IngredientController::class, 'all']);
-
+Route::post('/ingredient/',[IngredientController::class, 'add']);
+Route::put('/ingredient/{id}',[IngredientController::class, 'update']);
+Route::delete('/ingredient/{id}',[IngredientController::class, 'delete']);
 /*
 | ----------------
 | Recipe routes 
