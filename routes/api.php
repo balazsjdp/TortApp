@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\AccessoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,3 +39,14 @@ Route::delete('/ingredient/{id}',[IngredientController::class, 'delete']);
 */
 
 Route::get('/recipe/all',[RecipeController::class, 'all']);
+
+/*
+| ----------------
+| Accessory routes 
+| -----------------
+*/
+
+Route::get('/accessory/all',[AccessoryController::class, 'all']);
+Route::post('/accessory/',[AccessoryController::class, 'add']);
+Route::put('/accessory/{id}',[AccessoryController::class, 'update']);
+Route::delete('/accessory/{id}',[AccessoryController::class, 'delete']);

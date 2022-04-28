@@ -25,15 +25,27 @@ class NavItemSeeder extends Seeder
             [
                 'name' => 'Összetevők',
                 'route' => 'ingredients',
-                'ordering' => 2,
+                'ordering' => 4,
                 'icon' => 'Egg'
             ],
             [
                 'name' => 'Receptek',
                 'route' => 'recipes',
-                'ordering' => 2,
+                'ordering' => 3,
                 'icon' => 'Receipt'
             ],
+            [
+                'name' => 'Rendelések',
+                'route' => 'orders',
+                'ordering' => 2,
+                'icon' => 'FilterFrames'
+            ],
+            [
+                'name' => 'Kiegészítők',
+                'route' => 'accessories',
+                'ordering' => 2,
+                'icon' => 'FilterVintage'
+            ]
         ];
 
         foreach ($links as $key => $navbar) {

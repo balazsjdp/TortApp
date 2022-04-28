@@ -35,3 +35,11 @@ Route::get('/dashboard', function () {
 Route::get('/ingredients', function () {
     return view('ingredients');
 })->middleware(['auth'])->name('ingredients');
+
+Route::get('/orders', function () {
+    return view('orders');
+})->middleware(['auth'])->name('orders');
+
+Route::get('/accessories', function () {
+    return view('accessories');
+})->middleware(['auth'])->name('accessories');
