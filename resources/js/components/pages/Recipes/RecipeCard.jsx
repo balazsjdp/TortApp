@@ -29,16 +29,6 @@ const ExpandMore = styled((props) => {
 }));
 
 
-
-
-
-
-
-
-
-
-
-
 const RecipeCard = (props) => {
   const {recipeData} = props;
   const [expanded, setExpanded] = React.useState(false);
@@ -46,16 +36,6 @@ const RecipeCard = (props) => {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
-
-
-
-
-
-
-
-
-
 
 
   return (
@@ -100,7 +80,18 @@ const RecipeCard = (props) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Elkészítés:</Typography>
+          <Typography fontWeight={"bold"} paragraph>Összetevők:</Typography>
+            <ul>
+              {
+                recipeData.ingredients.map(i => {
+                  return (
+                  <li key={i.id}>
+                    {i.amount} {i.unit} - {i.name} <Typography style={{fontStyle: "italic", opacity: "0.3", fontWeight: 700}} component={"span"} color={"secondary"}>({i.type})</Typography>
+                  </li>)
+                })
+              }
+            </ul>
+          <Typography fontWeight={"bold"} paragraph>Elkészítés:</Typography>
             {recipeData.description}
         </CardContent>
       </Collapse>

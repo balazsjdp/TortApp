@@ -11,10 +11,8 @@ class RecipeIngredient extends Model
 
     protected $table = 'recipe_ingredients';
 
-    /*public function recipe()
-    {
-        return $this->belongsToMany('App\Models\Recipe', 'recipe_id');
-    }*/
-
+    public function ingredients(){
+        return $this->belongsToMany(Recipe::class, 'recipe_ingredients');
+    }
 
 }

@@ -19,7 +19,7 @@ class RecipeController extends Controller
 
     public function all()
     {
-        $recipes = Recipe::with('ingredients')->with("accessories")->get();
+        $recipes = Recipe::with('ingredients')->get();
 
         foreach ($recipes as $recipe) {
             $recipe->image =  Storage::url('recipe-images/'.$recipe->image);
